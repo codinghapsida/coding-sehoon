@@ -16,11 +16,10 @@
 # 돈으로 매수한 사람은 반드시 다솜이를 찍는다고 가정한다.
 # 다솜이가 매수해야하는 사람의 최솟값을 출력하는 프로그램을 작성하시오.
 
-
 import sys 
 input = sys.stdin.readline
 
-people = [int(input()) for _ in range(int(input()))]
+people = [int(input()) for _ in range(int(input()))] # o(n)
 
 if len(people) == 1 : print(0)
 else :
@@ -33,6 +32,6 @@ else :
     dasom += 1
     except_dasom[0] -= 1
     count +=1
-    except_dasom = sorted(except_dasom, reverse=True)
+    except_dasom = sorted(except_dasom, reverse=True) # 상수 c
 
   print(count)

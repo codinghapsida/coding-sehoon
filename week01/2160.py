@@ -8,9 +8,10 @@ from itertools import combinations
 import sys
 input = sys.stdin.readline
 
-n = int(input())
-box = [[input() for _ in range(5)] for _ in range(n)]
+n = int(input()) 
+box = [[input() for _ in range(5)] for _ in range(n)] # [ [...x...],[..x.x..x]...] [], [] ]
 answer = []
+
 
 def check(box1, box2):
   count = 0
@@ -21,11 +22,13 @@ def check(box1, box2):
     
   return count
 
-for i in combinations(box, 2):
-  answer.append(check(i[0], i[1]))
-  answer.append(box.index(list(i)[0]) + 1)
-  answer.append(box.index(list(i)[1]) + 1)
+for i in combinations(box, 2): # 3, 1,2 1,3 2,3
+  answer.append(check(i[0], i[1])) # 20
+  answer.append(box.index(list(i)[0]) + 1) # 1
+  answer.append(box.index(list(i)[1]) + 1) # 2
+
+# answer = [ 20, 1, 2, 30, 1, 3, 40, 2, 3]
 
 best_case = max(answer)
-answer = sorted( answer[ answer.index(best_case)+1 : answer.index(best_case)+3 ] )
-print(*answer)
+answer = sorted( answer[ answer.index(best_case)+1 : answer.index(best_case)+3 ] ) 
+print(*answer) 

@@ -12,3 +12,5 @@ lst = sorted(list(map(int, input().split())))
 
 if n % 2 == 0: print(lst[n//2 -1])
 else: print(lst[n//2])
+
+# -> 오름차순 정렬 후 가운데 숫자를 찾으면 됌
